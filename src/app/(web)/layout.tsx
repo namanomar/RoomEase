@@ -1,37 +1,47 @@
-import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
-import ThemeProvider from "@/components/ThemeProvider/themeProvider";
-import { NextAuthProvider } from "@/components/AuthProvider/AuthProvider";
+import type { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
+
+import Header from '@/components/Header/Header';
+import './globals.css';
+import Footer from '@/components/Footer/Footer';
+import ThemeProvider from '@/components/ThemeProvider/ThemeProvider';
+import { NextAuthProvider } from '@/components/AuthProvider/AuthProvider';
+import Toast from '@/components/Toast/Toast';
 
 const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
-  style: ["italic", "normal"],
-  variable: "--font-poppins",
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+  style: ['italic', 'normal'],
+  variable: '--font-poppins',
 });
 
 export const metadata: Metadata = {
-  title: "Hotel Management App",
-  description: "Discover the best hotel room ",
+  title: 'Hotel Management App',
+  description: 'Discover the best hotel rooms',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
+    <html lang='en'>
+      <head>
+        <link
+          rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
+          crossOrigin='anonymous'
+        />
+      </head>
       <body className={poppins.className}>
         <NextAuthProvider>
           <ThemeProvider>
-            <main className="font-normal">
-              <Header></Header>
+            <Toast />
+            <main className='font-normal overflow-hidden'>
+              <Header />
               {children}
-              <Footer></Footer>
+              <Footer />
             </main>
           </ThemeProvider>
         </NextAuthProvider>

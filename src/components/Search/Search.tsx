@@ -31,17 +31,17 @@ const Search: FC<Props> = ({
   };
 
   return (
-    <section className='bg-tertiary-light px-4 py-6 rounded-lg'>
+    <section className='bg-tertiary-light px-4 py-6 '>
       <div className='container mx-auto flex gap-4 flex-wrap justify-between items-center'>
         <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0'>
-          <label className='block text-sm font-medium mb-2 text-black'>
+          <label className='block text-sm font-medium mb-2 text-white'>
             Room Type
           </label>
           <div className='relative'>
             <select
               value={roomTypeFilter}
               onChange={handleRoomTypeChange}
-              className='w-full px-4 py-2 capitalize rounded leading-tight dark:bg-black focus:outline-none'
+              className='w-full px-4 py-2 capitalize rounded leading-tight dark:bg-white text-black focus:outline-none'
             >
               <option value='All'>All</option>
               <option value='Basic'>Basic</option>
@@ -52,14 +52,14 @@ const Search: FC<Props> = ({
         </div>
 
         <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0'>
-          <label className='block text-sm font-medium mb-2 text-black'>
+          <label className='block text-sm font-medium mb-2 text-white'>
             Search
           </label>
           <input
             type='search'
             id='search'
             placeholder='Search...'
-            className='w-full px-4 py-3 rounded leading-tight dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white'
+            className='w-full px-4 py-3 rounded leading-tight dark:bg-blackAccent focus:outline-none placeholder:text-black dark:placeholder:text-black text-black'
             value={searchQuery}
             onChange={handleSearchQueryChange}
           />

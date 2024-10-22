@@ -24,9 +24,9 @@ const user = {
       validation: Rule => Rule.required(),
     }),
     defineField({
-      name: 'governmentid',
-      title: 'GovernmentId',
-      type: 'string',
+      name: 'image',
+      title: 'Image',
+      type: 'url',
     }),
     defineField({
       name: 'password',

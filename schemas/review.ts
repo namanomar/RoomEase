@@ -35,4 +35,4 @@ const review = {
   ],
 };
 
-export default review; 
+export default review;

@@ -1,7 +1,8 @@
+import AboutSection from '@/components/About/About';
 import FeaturedRoom from '@/components/FeaturedRoom/FeaturedRoom';
 import Gallery from '@/components/Gallery/Gallery';
-import HeroSection from '@/components/HeroSection/HeroSection';
-import NewsLetter from '@/components/NewLetter/NewLetter';
+import Header from '@/components/HeroSection2/Hero';
+import NewsLetter from '@/components/NewsLetter/NewsLetter';
 import PageSearch from '@/components/PageSearch/PageSearch';
 import { getFeaturedRoom } from '@/libs/apis';
 
@@ -10,10 +11,11 @@ const Home = async () => {
 
   return (
     <>
-      <HeroSection />
+      <Header/>
       <PageSearch />
-      <FeaturedRoom featuredRoom={featuredRoom} />
+      {/* <FeaturedRoom featuredRoom={featuredRoom} /> */}
       <Gallery />
+      <AboutSection></AboutSection>
       <NewsLetter />
     </>
   );

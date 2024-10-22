@@ -18,7 +18,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   if (!renderComponent) return <></>;
-  
+
   return (
     <ThemeContext.Provider value={{ darkTheme, setDarkTheme }}>
       <div className={`${darkTheme ? 'dark' : ''} min-h-screen`}>
@@ -29,6 +29,5 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     </ThemeContext.Provider>
   );
 };
-
 
 export default ThemeProvider;

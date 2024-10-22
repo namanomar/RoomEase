@@ -1,6 +1,7 @@
 'use client';
 
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { AiFillGithub } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 import { signUp } from 'next-auth-sanity/client';
 import { signIn, useSession } from 'next-auth/react';

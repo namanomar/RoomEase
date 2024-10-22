@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { assets } from '../../../public/assets/assets';
 
 const Gallery = () => {
   return (
@@ -8,8 +9,8 @@ const Gallery = () => {
           <div className='w-1/2 p-1 md:p-2 h-48'>
             <Image
               alt='gallery'
-              className='img'
-              src='/images/hero-1.jpeg'
+              className='img object-cover max-w-sm'
+              src={assets.hotel1}
               width={200}
               height={200}
             />
@@ -18,16 +19,25 @@ const Gallery = () => {
             <Image
               alt='gallery'
               className='img'
-              src='/images/hero-2.jpeg'
+              src={assets.hotel2}
               width={200}
               height={200}
             />
           </div>
-          <div className='w-full p-1 md:p-2 h-48'>
+          <div className='w-1/2 p-1 md:p-2 h-48 object-cover'>
             <Image
               alt='gallery'
               className='img'
-              src='/images/hero-3.jpeg'
+              src={assets.hotel3}
+              width={200}
+              height={200}
+            />
+          </div>
+          <div className='w-1/2 p-1 md:p-2 h-48 object-cover'>
+            <Image
+              alt='gallery'
+              className='img'
+              src={assets.hotel7}
               width={200}
               height={200}
             />
@@ -38,7 +48,7 @@ const Gallery = () => {
             <Image
               alt='gallery'
               className='img'
-              src='/images/hero-1.jpeg'
+              src={assets.hotel4}
               width={200}
               height={200}
             />
@@ -47,7 +57,7 @@ const Gallery = () => {
             <Image
               alt='gallery'
               className='img'
-              src='/images/hero-2.jpeg'
+              src={assets.hotel5}
               width={200}
               height={200}
             />
@@ -56,7 +66,7 @@ const Gallery = () => {
             <Image
               alt='gallery'
               className='img'
-              src='/images/hero-3.jpeg'
+              src={assets.hotel6}
               width={200}
               height={200}
             />

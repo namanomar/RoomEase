@@ -1,22 +1,27 @@
-import type { Config } from "tailwindcss";
-import { fontFamily } from 'tailwindcss/defaultTheme';
+import type { Config } from 'tailwindcss';
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 const config: Config = {
   darkMode: 'class',
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#038C7F',
-        secondary: '#9d75ec',
+        primary: '#ffa733',
+        secondary: '#9B7EBD',
         tertiary: {
-          dark: '#5400fc',
-          light: '#9d75ec',
+          light: '#181C14',
+          dark: '#3C3D37',
         },
+        blackAccent:{
+          light:"#000000",
+          dark:"#ffffff"
+        },
+        
       },
       fontFamily: {
         poppins: ['var(--font-poppins)', ...fontFamily.sans],
@@ -25,5 +30,4 @@ const config: Config = {
   },
   plugins: [],
 };
-
 export default config;
