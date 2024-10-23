@@ -4,7 +4,7 @@ import { Poppins } from 'next/font/google';
 import Header from '@/components/Header/Header';
 import './globals.css';
 import Footer from '@/components/Footer/Footer';
-import ThemeProvider from '@/components/ThemeProvider/ThemeProvider';
+import ThemeProvider from '@/components/ThemeProvider/themeProvider';
 import { NextAuthProvider } from '@/components/AuthProvider/AuthProvider';
 import Toast from '@/components/Toast/Toast';
 
