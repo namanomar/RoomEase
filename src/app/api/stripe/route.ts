@@ -6,7 +6,7 @@ import { NextResponse } from 'next/server';
 import { getRoom } from '@/libs/apis';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-  apiVersion: '2023-08-16',
+  apiVersion: "2024-09-30.acacia",
 });
 
 type RequestData = {
@@ -65,10 +65,10 @@ export async function POST(req: Request, res: Response) {
             currency: 'usd',
             product_data: {
               name: room.name,
-              images: room.images.map(image => image.url),
+              images: room.images.filter(image => image && image.url).map(image => image.url), 
             },
-            unit_amount: parseInt((totalPrice * 100).toString()),
-          },
+            unit_amount: Math.round(totalPrice * 100),
+          },                   
         },
       ],
       payment_method_types: ['card'],
@@ -85,7 +85,6 @@ export async function POST(req: Request, res: Response) {
         totalPrice
       }
     });
-
     return NextResponse.json(stripeSession, {
       status: 200,
       statusText: 'Payment session created',

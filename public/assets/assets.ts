@@ -9,6 +9,9 @@ import hotel4 from "./hotel4.jpg"
 import hotel5 from "./hotel5.jpg"
 import hotel6 from "./hotel6.jpg"
 import hotel7 from "./hotel7.jpg"
+import breakfast from "./breakfast.png"
+import lunch from "./lunch-time.png"
+import dinner from "./dinner.png"
 
 export const assets = {
     logo,
@@ -21,5 +24,6 @@ export const assets = {
     hotel4,
     hotel5,
     hotel6,
-    hotel7
+    hotel7,
+    breakfast,lunch,dinner
 }
