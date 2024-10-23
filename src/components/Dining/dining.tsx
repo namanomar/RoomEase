@@ -1,15 +1,22 @@
 "use client"
 import React, { useState } from 'react';
 import { assets } from '../../../public/assets/assets';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
-const menuItems = {
+const menuItems: Record<string, string[]> = {
   breakfast: ['Eggs & Toast', 'Pancakes', 'Bacon', 'Oatmeal', 'Coffee'],
   lunch: ['Caesar Salad', 'Sandwich', 'Soup', 'Grilled Chicken', 'Pasta'],
-  dinner: ['Steak', 'Salmon', 'Rice Bowl', 'Vegetable Curry', 'Pasta']
+  dinner: ['Steak', 'Salmon', 'Rice Bowl', 'Vegetable Curry', 'Pasta'],
 };
 
-const colorSchemes = {
+type ColorScheme = {
+  bg: string;
+  hover: string;
+  text: string;
+  icon: StaticImageData; // Assuming you're using `next/image` assets.
+};
+
+const colorSchemes: Record<string, ColorScheme> = {
   breakfast: {
     bg: 'bg-sky-400',
     hover: 'bg-sky-500',
@@ -30,7 +37,11 @@ const colorSchemes = {
   }
 };
 
-const MealCard = ({ type }) => {
+interface MealCardProps {
+  type: string;
+}
+
+const MealCard: React.FC<MealCardProps> = ({ type }) => {
   const [isHovered, setIsHovered] = useState(false);
   const lowerType = type.toLowerCase();
   const colors = colorSchemes[lowerType];
@@ -52,8 +63,7 @@ const MealCard = ({ type }) => {
       >
         {/* Main Content */}
         <div className="flex flex-col items-center justify-center h-48">
-            <Image src={colors.icon} alt="" className='w-16 h-16 mb-4'></Image>
-          
+          <Image src={colors.icon} alt="" className='w-16 h-16 mb-4' />
           <h2 className="text-2xl font-bold text-white uppercase tracking-wider">
             {type}
           </h2>
@@ -78,7 +88,7 @@ const MealCard = ({ type }) => {
   );
 };
 
-const MealTimeCards = () => {
+const MealTimeCards: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
       <div className="max-w-6xl mx-auto">
